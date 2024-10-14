@@ -22,7 +22,7 @@ jobs:
       run: msbuild UnSafengine64.sln /p:Configuration=Release
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: UnSafengine64-binary
         path: path_to_executable
