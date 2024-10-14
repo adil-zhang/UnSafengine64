@@ -1,0 +1,28 @@
+name: Build UnSafengine64
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Visual Studio
+      uses: microsoft/setup-msbuild@v1
+      with:
+        vs-version: '2019'
+
+    - name: Build with MSBuild
+      run: msbuild UnSafengine64.sln /p:Configuration=Release
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: UnSafengine64-binary
+        path: path_to_executable
