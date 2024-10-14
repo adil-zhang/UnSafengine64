@@ -3,7 +3,7 @@ name: Build UnSafengine64
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
